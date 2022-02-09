@@ -1,0 +1,9 @@
+{% extends '../base.html.twig' %}
+
+{% block title %}Games{% endblock %}
+
+{% block body %}
+    {% for game in games %}
+        <h4>{{ game }}</h4>
+    {% endfor %}
+{% endblock %}
