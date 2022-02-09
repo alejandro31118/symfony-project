@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Companies{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    {% for company in companies %}
+        <p>{{ company.name }}</p>
+        <p>{{ company.isin }}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

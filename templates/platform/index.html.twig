@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Platforms{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    {% for platform in platforms %}
+        <p>{{ platform.name }}</p>
+        <p>{{ platform.price }}</p>
+        <p>{{ platform.company }}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

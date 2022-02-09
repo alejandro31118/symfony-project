@@ -1,9 +1,14 @@
-{% extends '../base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Games{% endblock %}
 
 {% block body %}
+
+<div class="container">
     {% for game in games %}
-        <h4>{{ game }}</h4>
+        <p>{{ game.name }}</p>
+        <p>{{ game.price }}</p>
     {% endfor %}
+</div>
+
 {% endblock %}

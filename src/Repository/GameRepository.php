@@ -19,7 +19,7 @@ class GameRepository extends ServiceEntityRepository
         parent::__construct($registry, Game::class);
     }
 
-    public function getAllGames() {
+    /*public function getAllGames() {
         $entityManager = $this->getEntityManager();
 
         $query = $entityManager->createQuery(
@@ -27,7 +27,7 @@ class GameRepository extends ServiceEntityRepository
         );
 
         return $query->getResult();
-    }
+    }*/
 
     // /**
     //  * @return Game[] Returns an array of Game objects
