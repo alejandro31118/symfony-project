@@ -5,11 +5,25 @@
 {% block body %}
 
 <div class="container">
-    {% for platform in platforms %}
-        <p>{{ platform.name }}</p>
-        <p>{{ platform.price }}</p>
-        <p>{{ platform.company }}</p>
-    {% endfor %}
+
+    <div class="row card-container justify-content-center">
+        {% for platform in platforms %}
+        <div class="card mt-4" style="width: 18rem; margin-right:25px;">
+            <div class="card-body">
+                <h5 class="card-title">{{ platform.name }}</h5>
+                <h5 class="card-text">{{ platform.company }}</h5>
+                <p class="card-text">Price: ${{ platform.price }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Games:</strong></li>
+                {% for game in platform.games %}
+                    <li class="list-group-item">- {{ game.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+
 </div>
 
 {% endblock %}

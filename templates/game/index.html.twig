@@ -5,10 +5,24 @@
 {% block body %}
 
 <div class="container">
-    {% for game in games %}
-        <p>{{ game.name }}</p>
-        <p>{{ game.price }}</p>
-    {% endfor %}
+
+    <div class="row card-container justify-content-center">
+        {% for game in games %}
+        <div class="card mt-4" style="width: 18rem; margin-right:25px;">
+            <div class="card-body">
+                <h5 class="card-title">{{ game.name }}</h5>
+                <p class="card-text">Price: ${{ game.price }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Platforms:</strong></li>
+                {% for platform in game.platform %}
+                    <li class="list-group-item">- {{ platform.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+
 </div>
 
 {% endblock %}

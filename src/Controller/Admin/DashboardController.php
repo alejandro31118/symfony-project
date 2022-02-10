@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\Admin\GameCrudController;
+use App\Controller\HomeController;
 use App\Entity\Company;
 use App\Entity\Game;
 use App\Entity\Platform;
@@ -25,6 +26,7 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
+        yield MenuItem::linkToUrl('Home', 'fas fa-home', '/');
         yield MenuItem::linkToCrud('Games', 'fas fa-list', Game::class);
         yield MenuItem::linkToCrud('Platforms', 'fas fa-list', Platform::class);
         yield MenuItem::linkToCrud('Companies', 'fas fa-list', Company::class);

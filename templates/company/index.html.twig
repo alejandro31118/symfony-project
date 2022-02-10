@@ -5,10 +5,19 @@
 {% block body %}
 
 <div class="container">
-    {% for company in companies %}
-        <p>{{ company.name }}</p>
-        <p>{{ company.isin }}</p>
-    {% endfor %}
+
+    <div class="row card-container justify-content-center">
+        {% for company in companies %}
+        <div class="card mt-4" style="width: 18rem; margin-right:25px;">
+            <div class="card-body">
+                <h5 class="card-title">{{ company.name }}</h5>
+                <p class="card-text">ISIN: {{ company.isin }}</p>
+                <p class="card-text">Number of employees: {{ company.employees }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
 </div>
 
 {% endblock %}
